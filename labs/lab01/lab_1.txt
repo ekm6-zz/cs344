@@ -1,0 +1,20 @@
+Exercise 1.1
+
+b)
+
+	i. function
+	ii. list
+	iii. yes, achieve_all() calls achieve() which calls calls apply_operator(), which calls calls achieve_all() again, making it recursive.
+
+d)
+	i. this models the monkey and banana problem. 
+		Rules: a hungry monkey is in a room. Bananas have been hung from the center of the ceiling of the room.In the corner of the room there is a chair. the monkey can move things aroun cary things, wave a stick in the air, and reach for the bananas
+
+	This code faithfully models that problem. The only variation is that the monkey starts with a ball in its' hand. 
+
+	ii. This mechanism uses means-end analysis. It defines the initial state, goal state, and a list of operators (actions, pre-conditions, and post-conditions).
+		It then it does a search back from the goal state trying to reach the starting state.  
+
+	iii. Yes, it fits the definitions of intelligence that deal with rationality. It acts ("moving" the blocks), and thinks rationally (finding a way to move the blocks to reach goal state).
+
+	iv. Yes, it would be displaying rationality
