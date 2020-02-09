@@ -58,6 +58,11 @@ if __name__ == '__main__':
         problem['goal'],
         problem['actions']
         ),
+        gps(
+        problem['initial'],
+        [ problem['goal'][1], problem['goal'][0] ],
+        problem['actions']
+        ),
     ]
     # Print the solution, if there is one.
     if actionSequence is not None:
