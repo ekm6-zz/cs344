@@ -1,0 +1,94 @@
+Exercise 2.1
+  a) 
+  Hill-climbing and Simulated annealing solved the problem.
+  
+  b) 
+  
+  Hill-climbing runs faster in the case. Since there is only one max, it 
+  finds it and doesn't leave it. Simulated annealing will jump around a 
+  little bit to see if it can find a higher max, resulting in a later run time.
+  
+  c) 
+  No, there is only one peak, so algorithms wont get caught in any local peaks.
+
+  d) 
+  Delta specifies hwo far each algorithm can look for its neighbors. So, some 
+  delta's can prevent an algorithm from finding the solution for Example. Say 
+  the initial value was 10 and delta was 2. No multiple of 2 can be added to 
+  reach 15, so the both would "fail" to find the optimum solution. 
+    
+  e) 
+  This handles the "temperature" reading for the Simulated annealing solution. 
+  As the algorithm gets deeper into its loop, this number decreases until it 
+  reaches one and the algorithm returns the current state.
+
+ Exercise 2.2
+  a) 
+  Depending on the step size, hill climbing does pretty poorly. Once it finds a 
+  peak that is higher than its immediate neighbors, it stops running.
+  
+  Simulated annealing does better because it's algorithm allows for more exploration. 
+  However, once it's "temperature" starts getting lower, then it runs into the 
+  same problem as hill climbing does.
+  
+  b) 
+  Yes, since there is maximum goes to infinity, where the algorithm starts affects the 
+  range of values each algorithm will explore.
+
+  c) 
+  
+  Yes, step size is crucial to the end result for both algorithms. For example, 
+  integer multiples of PI never complete. This is because the function has peaks
+  at multiples of Pi and increases every after each peak. So there is always a 
+  higher peak to explore. Additionally, larger step sizes seem to lead to more 
+  uniform performance between the two algorithms. 
+
+  d) 
+  The maximum is infinity and the minimum is 0. Neither of these algorithms 
+  stray too far past 6-7 steps of the initial position.
+
+
+Exercise 2.3
+
+  a) 
+
+  If the goal was 30, then these both do well enough. Say the goal were a higher 
+  number like 60, hill climbing doesn't make it. The restarts gives hill-climbing 
+  opportunity get a better starting position. Since the outcome for Hill climbing 
+  is heavily influenced by its start position, random restarts area very helpful.
+
+  Simulated annealing also benefits from the random restarts, but to a lesser 
+  degree than hill-climbing. Though Simulated annealing takes advantage of a 
+  better starting position, the real advantage is in getting more opportunities 
+  for it's 'jumping around' to make the right movements.
+
+  b) 
+  
+  Hill-climbing grows closer to an average of 26.5 while simulated annealing has 
+  an average of 79.
+
+  c)
+
+  Simulated annealing still performs better because it's algorithm is better 
+  suited for 'terrains' with multiple local peaks
+
+Exercise 2.4
+
+  a)
+
+  This makes more sense for the simulated annealing algorithm. Hill-climbing would 
+  get still get stuck in local maximums, but it would be more time intensive. 
+
+  b)
+
+  Because of the complexity of this problem, space and time constraints aren't 
+  much of concern. There are only two neighbors to look at: either step left or
+  step right. A problem like N-Queens would make one consider the number of 
+  solutions to run at the same time.
+
+  c)
+
+  This is different from random restarts because all the solutions run concurrently
+  and collaboratively. To implement this in the code, I would run N solutions 
+  concurrently, then gather all the the "neighbors" that resulted (a total of 
+  2N neighbors). Then, I would have the code choose the top N solutions.
