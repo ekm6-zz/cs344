@@ -1,0 +1,23 @@
+Lab 03
+
+Exercise 3.1
+    
+    a) 
+        Depth first search doesn't work even on the easy one. That's because
+        it has way too many options to look through. DPS searches every possible
+        path to find the solution, which is horribly inefficient. It takes 86
+        seconds to give up and fail.
+
+        AC3 runs very quickly, printing its results in fractions of a second.
+        It the constraints for each "step" or "move". If the move is determined
+        to be invalid or "inconsistent" with the goal state, it removes it from
+        the queue of available moves. This allows the algorithm to "infer" the 
+        correct solution. Which works better for simple solution. For more
+        complex problems, it is necessary to search for the solution, which thus
+        algorithm does not do.
+
+        Back-Tracking 
+
+Exercise 3.2
+
+Exercise 3.3
