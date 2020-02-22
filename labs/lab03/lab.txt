@@ -16,7 +16,27 @@ Exercise 3.1
         complex problems, it is necessary to search for the solution, which thus
         algorithm does not do.
 
-        Back-Tracking 
+        Back-Tracking is simular to Depth first search in some implementations.
+        It checks possible values and back tracks if the choice doesn't produce
+        a valid outcome. Without forward checking, this runs fairly slowly, slo-
+        er than AC3 because it's running a search. It isn't able to solve any
+        problems that the other algorithms can't (stops working after the easy
+         example).
+
+        Min-conflics is a local search algorithm implemented with hill-climbing.
+        It seemingly took longer on the simpler problems as oposed to the back-
+        tracking and AC3 algorithms. However, on the harder soduko example, it
+        was the only one that was able to solve the problem within my time con-
+        straints (3 minutes). It also solved the hardets one in the same amount
+        of time. Min-conflicts performs better when there are are many options
+        because unlike back-tracking, it doesn't search through every options.
+    
+    b)
+
+    
+
+
+
 
 Exercise 3.2
 
