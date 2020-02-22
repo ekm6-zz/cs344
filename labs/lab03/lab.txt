@@ -33,11 +33,22 @@ Exercise 3.1
     
     b)
 
-    
-
-
-
+        Back-tracking runs fastest with the combination of both forward checking
+        and the option to choose the next unassigned variable by minimum-remaining
+        -values. Forward checking elemenates options before the algorithm has to
+        look at them using AC3 mechanisms. Choosing by minimum-remaining-values 
+        speeds up the algorithm because it takes less time to search through less
+        options. Furthermore, solving the 'simpler' variables also eliminates possible
+        values from the varibles with more options.
 
 Exercise 3.2
 
+    a)
+        AC3 can get to N's or arbitrarily large because it doesn't do a full on search.
+        However, it will rarely find a solution for those same reasons.
+
+
+
 Exercise 3.3
+
+    a) CSP problems h
