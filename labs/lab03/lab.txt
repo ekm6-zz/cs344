@@ -1,0 +1,97 @@
+Lab 03
+
+Exercise 3.1
+
+    a) 
+        Depth first search doesn't work even on the easy one. That's because
+        it has way too many options to look through. DPS searches every possible
+        path to find the solution, which is horribly inefficient. It takes 86
+        seconds to give up and fail.
+
+        AC3 runs very quickly, printing its results in fractions of a second.
+        It the constraints for each "step" or "move". If the move is determined
+        to be invalid or "inconsistent" with the goal state, it removes it from
+        the queue of available moves. This allows the algorithm to "infer" the 
+        correct solution. Which works better for simple solution. For more
+        complex problems, it is necessary to search for the solution, which thus
+        algorithm does not do.
+
+        Back-Tracking is similar to Depth first search in some implementations.
+        It checks possible values and back tracks if the choice doesn't produce
+        a valid outcome. Without forward checking, this runs fairly slowly, slo-
+        er than AC3 because it's running a search. It isn't able to solve any
+        problems that the other algorithms can't (stops working after the easy
+         example).
+
+        Min-conflicts is a local search algorithm implemented with hill-climbing.
+        It seemingly took longer on the simpler problems as opposed to the back-
+        tracking and AC3 algorithms. However, on the harder sudoku example, it
+        was the only one that was able to solve the problem within my time con-
+        straints (3 minutes). It also solved the hardest one in the same amount
+        of time. Min-conflicts performs better when there are are many options
+        because unlike back-tracking, it doesn't search through every options.
+
+    b)
+
+        Back-tracking runs fastest with the combination of both forward checking
+        and the option to choose the next unassigned variable by minimum-remaining
+        -values. Forward checking eliminates options before the algorithm has to
+        look at them using AC3 mechanisms. Choosing by minimum-remaining-values 
+        speeds up the algorithm because it takes less time to search through less
+        options. Furthermore, solving the 'simpler' variables also eliminates possible
+        values from the variables with more options.
+
+Exercise 3.2
+    a)
+        AC3 could never solve the problem. AC3 limits the search space, but then
+        doesn't follow up with a search. Even with the pruned paths, n-queens is
+        too complex to solve without at search.
+
+        Back tracking was able to solve the problem within reasonable time until
+        N grew to past 25 or so. without changing any settings, backtracking brute
+        forces a solution, checking every option in sequence. When other settings
+        (the ones suggested) were applied, it was able to run more efficiently. It
+        solves up to 512.
+
+        min conflicts was able solve almost as many as back tracking, assuming
+        the step size as large enough. It seemingly has no limit to it's maximum
+        problem size. It solved up to n=2000 before I stopped testing it. It works 
+        so well in the case because because it's algorithm implements hill climbing 
+        on a constrained domain, which works pretty quickly. 
+
+
+    b) 
+    
+        Applying both mrv and forward checking helps the performance. These 
+        settings both limit the number of solutions the algorithm has to search
+        through (for reasons explained earlier). Especially as N grows larger, 
+        these methods grow more and more
+        useful.
+
+    c) 
+
+        According to the textbook, the Min-conflicts algorithm will solve this
+        problem in an average of 50 steps because of how densely the solutions 
+        are distributed throughout the problem space.
+
+Exercise 3.3
+
+    a) 
+
+        Traditional and CSP algorithms have a few things in common. They both
+        are fed an initial and goal state. To accompany that, both have built
+        in mechanisms to determine whether or not the goal has been reached.
+        However, when it comes to the actions and states, these algorithms begin
+        to differ. Traditional search is fed a set of actions that specify how 
+        to move from one state to the next. They have no internal structure unlike
+        the CSP algorithm's. CSP algorithm have what is called factored representation.
+        There is a set of variables each with a set of possible values (domain).
+        CSP moves from one state to the next based on the constraints that are given.
+        The goal is reached when there are no conflicts with the constraints. 
+
+    b)
+
+        Both algorithms can use heuristics to limit the search space. Traditional searches
+        like use heuristics like cost  (like in A*) to block off some paths. Since CSP has
+        factored representation, it is able to employ heuristics like forward checking or 
+        looking at the minimum remaining conflicts to limit the search space.
