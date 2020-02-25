@@ -16,39 +16,22 @@ Exercise 3.1
         complex problems, it is necessary to search for the solution, which thus
         algorithm does not do.
 
-        Back-Tracking is simular to Depth first search in some implementations.
-        It checks possible values and back tracks if the choice doesn't produce
-        a valid outcome. Without forward checking, this runs fairly slowly, slo-
-        er than AC3 because it's running a search. It isn't able to solve any
-        problems that the other algorithms can't (stops working after the easy
-         example).
-
-        Min-conflics is a local search algorithm implemented with hill-climbing.
-        It seemingly took longer on the simpler problems as oposed to the back-
-        tracking and AC3 algorithms. However, on the harder soduko example, it
-        was the only one that was able to solve the problem within my time con-
-        straints (3 minutes). It also solved the hardets one in the same amount
-        of time. Min-conflicts performs better when there are are many options
-        because unlike back-tracking, it doesn't search through every options.
-    
-    b)
-
-        Back-tracking runs fastest with the combination of both forward checking
-        and the option to choose the next unassigned variable by minimum-remaining
-        -values. Forward checking elemenates options before the algorithm has to
-        look at them using AC3 mechanisms. Choosing by minimum-remaining-values 
-        speeds up the algorithm because it takes less time to search through less
-        options. Furthermore, solving the 'simpler' variables also eliminates possible
-        values from the varibles with more options.
+        Back-Tracking 
 
 Exercise 3.2
-
     a)
         AC3 can get to N's or arbitrarily large because it doesn't do a full on search.
         However, it will rarely find a solution for those same reasons.
 
 
-
 Exercise 3.3
 
-    a) CSP problems h
+    a) 
+    Traditional search problems in some ways have more simple specifications.
+    They specify goals, actions, and starting states then the algorithm takes
+    care of the rest. CSP problems also specify goals, and actions (called domains
+    in this context). However, CSP problems also define neighbors  and constraints.
+
+    Search problems are concerned with the process. They calculate things like path
+    cost and keeps track of the series of steps it takes to get there. CSP problems
+    are more so concerned with large domains 
