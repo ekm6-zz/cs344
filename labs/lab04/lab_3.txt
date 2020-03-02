@@ -1,0 +1,87 @@
+Lab04
+Exercise 4.3
+March 1st, 2020
+
+
+Exercise A
+
+    i. P( user ) = .089
+
+    ii. P( test | user )= .99
+
+    iii. P( ¬test | user ) = .01
+
+    iv. P( test | ¬user ) = .02
+
+    v. P( user | test ) = 
+            P( user ^ test ) / P(test) =
+            P( test | user ) * P(user) / P(test)
+
+        // find P(test) //
+
+        P(test)= 
+            P( test | user) * P( user ) + P ( test | ¬user ) * P( ¬user )
+                    .99     *   .089    +         .02        *   (1-.089)
+
+            = .1063
+
+        // now substitute P(test) in //
+
+        P( user | test ) = 
+            P( test | user ) * P(user) / P(test)
+                  (.99)      * (.089)  / (.0163) 
+        
+        // answer: //
+            = | .8264 | 
+               ```````
+
+Exercise B
+
+    # symbols:
+
+        cancer = patient has cancer
+        positive = patient tested positive for cancer
+
+    # Givens: 
+
+        P(cancer) = .01 
+                ... therefore ... 
+        P(¬cancer) = .99
+        
+        P(positive | cancer) = .8 
+                ... therefore ... 
+        P(¬positive | cancer) = .2
+        
+        P(positive | ¬cancer) = .096 
+                ... therefore ... 
+        P(¬ positive | ¬cancer) = .904
+
+    # Goal:
+        
+        P(cancer | positive)
+
+        P(¬cancer | positive)
+
+    # Solution:
+
+        P(cancer | positive) = 
+            P(positive ^ cancer) / P(positive) = 
+            P(positive | cancer) * P(cancer) / P(positive)
+
+        // now to find P(positive) //
+
+        P(positive) =
+            P(positive | cancer) * P(cancer) + P(positive | ¬ cancer) * P(¬cancer) 
+                    (.08)        *   (.01)   +          (.096)        *   (.99)
+
+            = .10304
+        
+        // now substitute P(positive) in //
+
+        P(cancer | positive) =
+            P(positive | cancer) * P(cancer) / P(positive)
+                     (.8)        *  (.01)    /    (.10304)
+
+            // answer: //
+            = | 0.07764 | 
+               ```````
