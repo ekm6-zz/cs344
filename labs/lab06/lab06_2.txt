@@ -1,0 +1,53 @@
+Lab 06
+Exercise 2
+
+    a) Framing
+        1. 
+            We ant the Machine Learned model to determine whether or not a
+            given email is "important".
+        2.
+            Our ideal outcome is for the model to label email as important only
+            when they are time sensitive.
+        3.
+            a) Our success metrics are the percentage of emails correctly labeled
+                on a testing set of emails.
+            
+            b) Our Key results for the success metrics are for the model to label
+                the emails correctly at a rate of 95% or higher.
+            
+            c) Our model is deemed a failure if the model fails to achieve an accuracy
+                of at least 65%.
+        4.
+            a) The output from our ML model will be the label of the email
+
+            b) The output is defined as 1 for important and 0 for unimportant.
+
+        5.
+            a) The output from the ML model will be made at the arrival of a new email.
+        
+            b) The outcome will be used for labeling the email as "important". 
+        6.
+            If we didn't use ML, we would make a selection based on:
+                - sender
+                -time of day
+                -message content (look for words suggesting urgency)
+        
+    b) Formulating
+        7.
+            Our problem is best framed as a "Binary Classification" which predicts
+            whether or not an email is important.
+        8. 
+            rows --> emails
+            output --> label (1 or 0)
+            
+        9.
+            all of the following inputs are easy to obtain, from the email
+            itself: 
+                - sender
+                - isResponse?
+                - time sent
+                - number of characters
+                - subject
+        10. 
+            a reasonable model could be made using sender and subject.
+                

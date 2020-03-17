@@ -1,0 +1,21 @@
+Lab 06
+Exercise 1:
+
+Gain(Hungry) = Entropy(WillWait) - Remainder(Hungry)
+
+Entropy(WillWait) = -(p(yes)lg(yes) + p(no)lg(no))
+		  = -(6/12)lg(6/12) - (6/12)log(6/12)
+		  = 1
+
+Remainder(Hungry) = (5 + 2)/(6 + 6) * Entropy(5/7, 2/7) + (1 + 4)/(6 + 6) * Entropy(1/5, 4/5)
+		  =          7/12 * -((5/7)lg(5/7) + (2/7)lg(2/7)) + 5/12 * -((1/5)lg(1/5) + (4/5)lg(4/5))
+		  =     0.804
+		  
+
+Gain(Hungry) = Entropy(WillWait) - Remainder(Hungry)
+	     = 1 - 0.804
+	     = 0.196
+
+According to these calculations the gain for "Patrons" is higher than the gain
+for "Angry" and "Type". This means that there is more information given if we 
+ask about "patrons" than either of the other two options. 
