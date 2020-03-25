@@ -1,0 +1,29 @@
+Exercise 3
+
+    A:
+        Task #1:
+            california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"]
+
+            calibration_data = train_model(
+                learning_rate=0.00005,
+                steps=500,
+                batch_size=5,
+                input_feature="rooms_per_person"
+            )
+            
+            
+        Task #2:
+            
+            plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+            plt.show()
+        
+        Task #3:
+            
+            california_housing_dataframe["rooms_per_person"] = (
+    california_housing_dataframe["rooms_per_person"]).apply(lambda x: min(x, 3))
+    
+    B:
+        Using snythetic features can give models new useful features without needing to get more data. In some cases (the ideal ones), the resulting synthetic feature can create a more accurate model than the features that were used to create it. Like in this exercies, rooms per person created a better model than total_rooms and population.
+        
+    C:
+        outliers are values in the data that differ significantly from the rest of the data. They are usually excluded from calculations because including them would sqew the model.

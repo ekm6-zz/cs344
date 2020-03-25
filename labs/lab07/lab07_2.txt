@@ -1,0 +1,29 @@
+Exercise 2
+
+    A:
+        Both types of data can be represeted with numbers. However, categorical data can be represented in strings whilst numerical data cannot. The main difference between categorical and numerical data is that arithmetic operations can not be performed on the categorical data. 
+        
+    B:
+        Task #1: 
+            train_model(
+            learning_rate=0.00001,
+            steps=50000,
+            batch_size=10
+            )
+            
+        Task #2: 
+            train_model(
+            learning_rate=0.00001,
+            steps=50000,
+            batch_size=10
+            input_feature="population"
+            )
+
+    C:
+        Hyper perameters:
+            * learning rate
+            * steps
+            * batch size
+            * input feature
+        There is not a standard tuning algorithm for features. However, it is a rather simple optimization problem that can be solved using standard AI methods (search algorthims, Bayesian networks, NN, ect.). Though, I would assume a manual guess and check is more commonplace. 
+        

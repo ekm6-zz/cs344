@@ -1,0 +1,14 @@
+Exercise 1
+
+    A: 
+        Exercise #1: 
+            cities['new_cond'] = (cities['City name'].apply(lambda name: name.split()[0] == 'San'                   )) & (cities['Area square miles'] > 50)
+            cities
+        Exercise #2:
+            Pandas allows us to reIndex with indexes that 'don't exisit' and fills them in with NaN values. This is because the indexes are usually pulled from teh data. So, when there are missing indexes in the data, us the programmer don't have to clean the data first.
+    
+    B: 
+        Using pandas has useful and intuitive tools for joining, merging and shuffling multiple data sets. Numpy is more best when working with a single dataset.
+    
+    C: 
+        It would be useful to shuffle / reorder a Pandas DataFrame when partioning testing and training data. Order may lead to certain baiases in the partitions.
