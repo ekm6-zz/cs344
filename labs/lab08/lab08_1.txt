@@ -1,0 +1,99 @@
+Exercise 1:
+
+  A:
+    Task 1:
+        It is unclear what the median income is supposed to map to. The values are between 2 and 15. Also, the rooms_per_person has a max of 55, which seems very unlikely.
+
+    Task 2:
+        There is an improper distribution between the data in the training and validation set. This is probably due to the ordering that the dataset came in. Partitioning by choosing the first n values made the two sets represent different areas.
+
+    Task 3:
+        To solve this, we should uncomment out the code that randomizes the dataset before partitioning it.
+
+    Task 4 (I only included the parts that required my input):
+
+      # Create input functions.
+      training_input_fn = lambda: my_input_fn(
+          training_examples,
+          training_targets["median_house_value"],
+          batch_size=batch_size)
+      predict_training_input_fn = lambda: my_input_fn(
+          training_examples,
+          training_targets["median_house_value"],
+          num_epochs=1,
+          shuffle=False)
+      predict_validation_input_fn = lambda: my_input_fn(
+          validation_examples, validation_targets["median_house_value"],
+          num_epochs=1,
+          shuffle=False)
+
+
+      # Take a break and compute predictions.
+      training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+      training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+
+      validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+      validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+
+      linear_regressor = train_model(
+      # TWEAK THESE VALUES TO SEE HOW MUCH YOU CAN IMPROVE THE RMSE
+      learning_rate=0.00010,
+      steps=100,
+      batch_size=5,
+      training_examples=training_examples,
+      training_targets=training_targets,
+      validation_examples=validation_examples,
+      validation_targets=validation_targets)
+
+
+    Task 5:
+      california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+
+      test_examples = preprocess_features(california_housing_test_data)
+      test_targets = preprocess_targets(california_housing_test_data)
+
+      predict_test_input_fn = lambda: my_input_fn(
+            test_examples,
+            test_targets["median_house_value"],
+            num_epochs=1,
+            shuffle=False)
+
+      test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+      test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+      root_mean_squared_error = math.sqrt(
+          metrics.mean_squared_error(test_predictions, test_targets))
+
+      print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+
+      test_examples = preprocess_features(california_housing_test_data)
+      test_targets = preprocess_targets(california_housing_test_data)
+
+      predict_test_input_fn = lambda: my_input_fn(
+            test_examples,
+            test_targets["median_house_value"],
+            num_epochs=1,
+            shuffle=False)
+
+      test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+      test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+      root_mean_squared_error = math.sqrt(
+          metrics.mean_squared_error(test_predictions, test_targets))
+
+      print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+
+    # How does your test performance compare to the validation performance?
+    # What does this say about the generalization performance of your model?
+        The model performed prettty simularly on the testing data as it did on
+        the testing data. It had an RSME of 162 while the validation set had an
+        RMSE of 165. THis means that the model was not overfit on the validation
+        set.
+
+  B:
+    Validaiton sets are useful for optimizing the training model before it touches
+    the training data. The more times you evaluate and optimize on the dataset,
+    the more likely it is to become absolete. After partitioning the data, it is
+    important to confirm that all the datasets a fully representnative of the data
+    failure to do so will lead to baises in the data that will likely cause the
+    model to perform poorly.

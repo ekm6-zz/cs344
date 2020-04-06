@@ -1,0 +1,19 @@
+Exercise 4:
+
+  A)
+    K-fold validaition minimizes the problems that arise from having such a small dataset. Since the validaiton set is small, the score we get from testing on it could vary a lot depending on which examples we included in it. To mitigate that, k-fold validation tests on "k" different folds and the final score is given to the average of all of all the folds. This is far more acurate than using any 1 fold.
+  B)
+    Having data with wildly differnet values makes it harder for the neural netowrk to learn. Best case scenario, it will take much longer. Worst case scenario, it will be unable to learn. If the sigmoid function was used as the activation function, then it would be able make up for that. However, it
+    newer functions like the relu and tanh functions are more commonplace because they run faster or lead to better results. A side affect leds to these other functions taking longer to converge with larger heterogenous data ranges.
+
+  C)
+    Chollet explains that smaller networks minimize overfitting in small datasets. This makes sense. The more layers we include in the model, the more likely we are to capture characteristics that are unique to this particular dataset and not others.
+
+  D)
+    When I ran the model with one less layer, it performed about the same. Technically .08 better, which is about $80 more accurate. Though, there seemed to be less variability between the folds. The netowrk is even simpler, so maybe 2 layers leads to some overfitting.
+
+    When I ran the network with one more hidden layer (with relu activation function), it performed worse, about sound .14 worse. Which is about $140 less accurate. This is likely evidence of overfitting.
+
+    When I ran the network with wider layers (twice as wide), the values resulting value about the same. It differed by +.04, which is only $40 worse. Widening the network should allow it to be more exporessive, hence more likely to lead to overfitting. The value is so small it may be negible in this case (result of natural variability).
+
+    When I ran the network with narrower layers (half as wide), the score differed by .04, which is only $40 better. Narrowing the layer should make the network simpler. Doing so seemed to slightly improve the accuracy. Perhaps the generated solution had some overfitting. Or maybe this is a result of natural variability.

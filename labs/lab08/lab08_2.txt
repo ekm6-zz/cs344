@@ -1,0 +1,30 @@
+Exercise 2:
+  A:
+
+    The Pearson correlation coefficient measures the relationship between a variable and it's target. In other words, it measures what happnes to varibale b as varible a increases. For example, population has a nearly perfect correlation with households. It  make sense that areas larger populations have more homes.
+
+  B:
+    Task 1:
+      selected features: median_income, rooms_per_person
+
+      hyperparameters:
+        learning_rate=0.05,
+        steps=500,
+        batch_size=5
+
+      Final RMSE: 84.63, this beat google's solution (112.23)
+
+    Task 2:
+      def select_and_transform_features(source_df):
+        selected_examples = pd.DataFrame()
+        selected_examples["median_income"] = source_df["median_income"]
+        selected_examples["rooms_per_person"] = source_df["rooms_per_person"]
+        selected_examples["distance_from_san_francisco"] = source_df["latitude"] -38
+        return selected_examples
+
+      hyperparameters:
+        learning_rate=0.05,
+        steps=500,
+        batch_size=5
+
+      Final RMSE: 82.97, this performs pretty closely to google's solution (82.2)
