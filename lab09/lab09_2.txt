@@ -1,0 +1,10 @@
+Exercise 2:
+
+A)
+  Sparsity esentially disculudes some features from the model. This prevents overfitting by "considering" less features and there by being less likely to focus on certain oddities in the specific dataset. Aditiinonally, this make the algorithm run more effieicently (less features means less calculations).
+B)
+  L1 pernialzes the number of non-zero weights. The only way the model would add new non-zero wieghts is if they were shown to significantly improve the over-all value of the model.
+C)
+  gamma: .7
+  model size: 606
+  log loss: .25

@@ -1,0 +1,16 @@
+Exercise 3:
+
+Further Expiriements:
+
+  1 hidden layer:
+    This performed about .6% better. May be evidence of overfitting with 2 layers, but is likely a negligable difference.
+  3 hidden layers:
+    This model had a very similar accuracy to the the one with 2 layers.
+  4 hidden units:
+    This performed 1% better. Perhaps 16 hidden units overfits, maybe this difference is negiligable.
+  64 hidden units:
+    This model performed 1% worse. There may be some slight overfitting occuring. But perhaps this difference is too small to definitively say that.
+  mse loss function:
+    This had the same accuracy as using binary cross entropy.
+  tanh activation fucntion:
+    tanh performed pretty simiarly to relu.

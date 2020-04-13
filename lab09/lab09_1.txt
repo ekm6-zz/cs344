@@ -1,0 +1,16 @@
+Exercise 1
+
+A)
+  Using the linear regreession approach worked pretty poorly. The model was only slightly better than random (RMSE of .45)
+
+B)
+  Both L2 and Log loss are ways to meature the performance of a model. However, they each work best in different settings. L2 loss works well in general cases (linear regreession), but it performs poorly in logistic regression when the output is an confidence probability. It doesn't penilize the model enough for different degrees of confidence (higher and lower probabilites) when the model is incorrect, Log loss does becuase it considers both the probability of both the positive and negative classifications (y_pred and [1-y_pred[).
+
+C)
+  Logisitic and linear regression are often compared with one another because they carry out simular processses to get to the prediciton. The main difference is taht linear regression outputs a value that could be within any range, logisic regression outputs a value between 0  and 1 (which is customary for choosing between two labels). 0 is one classification and 1 is another. The value is the probability that the item is classified to the the label 1.
+D)
+  AUC on the validation set: 0.80
+  Accuracy on the validation set: 0.78
+  learning_rate=0.000005,
+  steps=5000,
+  batch_size=1000,
