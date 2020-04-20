@@ -1,0 +1,9 @@
+Exercise 3:
+  A:
+    This confusion matrix shows which classes were misclassified as other classes.
+
+  B:
+    None of the changes I made were able to imrpove the accuracy on testing set. I tried adding another layer, decreasing the learning rate + increasing steps. All these improved the accuracy on the training data, but had little to now affect on the validation and testing set (either accuracy was the same or decreased by .01).
+
+  C:
+    As the step size increses, so does the number of "dark spots" increase as well. As if the detail of the pictures were getting sharper or more "details" are being added to the image.

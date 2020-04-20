@@ -1,0 +1,17 @@
+Exercise 4:
+
+A:
+  i)
+    total training cat images: 1000
+    total training dog images: 1000
+    total validation cat images: 500
+    total validation dog images: 500
+
+  ii)
+    This example stacks 3 {convolution + relu + maxpooling} modules, our class example only uses one.
+
+    Additionally, this example and the class example have different window dimensions for each. The class example had 26  x 26 window  for the convolutions and 13x13 window sizes for the maxplooling. This example uses 3x3 convolution windows and 2x2 maxpooling layer windows.
+
+    Another difference is in the number of filters each convolution extracts. For this example, the first convolution extracts 16 filters, the following one extracts 32 filters, and the last one extracts 64 filters. The example in class extracted 32 filters on it's only convolution.
+  iii)
+     The general trend seemed to make the image less sharp until it was only an outline (up to around 1000 steps). Then it seemed to go in the opposite direction and get sharper towards then end.

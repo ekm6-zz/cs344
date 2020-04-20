@@ -1,0 +1,16 @@
+Exercise 1
+
+A:
+  I would rathers use keras. It feels more intuitive in the way that we set up each layer. You can "see" the layer in your code and have (in my opinion) a more intuitive way to modify it or remove it.
+
+B:
+  Hyperparameters:
+    learning_rate=0.005,
+    steps=10000,
+    batch_size=100,
+    hidden_units=[10, 5, 3],
+
+  Performance:
+    Final RMSE (on training data):   100.52
+    Final RMSE (on validation data): 101.66
+    Final RMSE (on test data): 99.32
