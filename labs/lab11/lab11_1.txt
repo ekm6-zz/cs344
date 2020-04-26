@@ -1,0 +1,43 @@
+Exercise 1:
+
+Questions:
+  a) Linear models are better when we have a small dataset. NN need larger datasets.
+
+  2) Linear models fall short when there are non-linearities in the data. NN will be able to capture patterns more effectively.
+
+  3) Embeddings make sentiment analysis far more computationally efficient. Sparse matrcies are so wide, so training and fitting models takes a long time. Embedining will "shrink" those matrices to just a few columns wide, typically withought hurting performance.
+
+  4) "Bad" and "awful" have similar embeddings becuase they can be interchanged in a sentence without the sentence losing it's meaning.They're both something you'd find in a negative context.
+
+  5)
+    Learning Rate: 0.05
+    Steps: 5000
+    Hidden Units: [10,10]
+    performance:
+      ----------------
+      Training set metrics:
+      accuracy 0.87836
+      accuracy_baseline 0.5
+      auc 0.9451786
+      auc_precision_recall 0.9430592
+      average_loss 0.29923674
+      label/mean 0.5
+      loss 7.480919
+      precision 0.879179
+      prediction/mean 0.4956854
+      recall 0.87728
+      global_step 5000
+      ----------------
+      Test set metrics:
+      accuracy 0.85004
+      accuracy_baseline 0.5
+      auc 0.9244779
+      auc_precision_recall 0.92157996
+      average_loss 0.35458815
+      label/mean 0.5
+      loss 8.864704
+      precision 0.8540908
+      prediction/mean 0.4913365
+      recall 0.84432
+      global_step 5000
+      ----------------

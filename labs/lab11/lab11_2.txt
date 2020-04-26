@@ -1,0 +1,9 @@
+Exercise 2:
+
+Task 1) There is selection bais in the distribution of women to men included in the dataset.
+
+Task 2) The ratio of women to men is sqewed in the favor of men. However, looking more specifically at the demographic data, the ratio is only sqewed for Asian-Pacific and White men and women.
+
+Task3) Done as written
+
+Task4) For race White (0.7225, 0.5240), Asian-Pacific-Islander (0.7216, 0.5785) out performs Black (0.6698, 0.4226) and Amer-Indian-Eskimo (0.6667,0.4211).
