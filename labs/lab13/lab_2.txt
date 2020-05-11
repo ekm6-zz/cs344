@@ -1,0 +1,74 @@
+Known:
+    isOn(A,B)
+    isOn(B,C)
+    supports(T,C)
+
+    supports(X,Y) -> isOn(Y,X) >=CNF=> ~supports(X,Y) v isOn(Y,X) 
+    isOn(X,Y) -> isAbove(X,Y) >=CNF=> ~isOn(X,Y) v isAbove(X,Y)
+    isAbove(X,Y) ^ isAbove(Y,Z) -> isAbove(X,Z) >=CNF=> ~isAbove(X,Y) v ~isAbove(Y,Z) v isAbove(X,Z)
+
+Prove:
+    isAbove(A,T)
+
+Methood:
+    Proof by contradiction
+
+Assume:
+    ~isAbove(A,T)
+
+**PROOF BEGINS**
+
+state:
+    ~isAbove(A,T) ^ isOn(A,B) ^ isOn(B,C) ^ supports(T,C)
+
+unification and resolution step:
+    {X|T, Y|C}
+    supports(T,C) ^ ~supports(X,Y) v isOn(Y,X) 
+    isOn(C,T) 
+
+state:
+    ~isAbove(A,T) ^ isOn(A,B) ^ isOn(B,C) ^ isOn(C,T) 
+
+unification and resolution step:
+    {X|C, Y|T}
+    isOn(C,T) ^ ~isOn(X,Y) v isAbove(X,Y)
+    isAbove(C,T) 
+
+state:
+    ~isAbove(A,T) ^ isOn(A,B) ^ isOn(B,C) ^ isAbove(C,T) 
+
+unification and resolution step:
+    {X|B, Y|C}
+    isOn(B,C) ^ ~isOn(X,Y) v isAbove(X,Y)
+    isAbove(B,C) 
+
+state:
+    ~isAbove(A,T) ^ isOn(A,B) ^ isAbove(B,C) ^ isAbove(C,T) 
+
+unification and resolution step:
+    {X|A, Y|B}
+    isOn(B,C) ^ ~isOn(X,Y) v isAbove(X,Y)
+    isAbove(A,B) 
+
+state:
+    ~isAbove(A,T) ^ isAbove(A,B) ^ isAbove(B,C) ^ isAbove(C,T) 
+
+unification and resolution step:
+    {X|B, Y|C, Z|T|}    
+    isAbove(B,C) ^ isAbove(C,T) ^ ~isAbove(X,Y) v ~isAbove(Y,Z) v isAbove(X,Z)
+    isAbove(B,T)
+
+state:
+    ~isAbove(A,T) ^ isAbove(A,B) ^ isAbove(B,T)
+
+unification and resolution step:
+    {X|A, Y|B, Z|T|}    
+    isAbove(A,B) ^ isAbove(B,T) ^ ~isAbove(X,Y) v ~isAbove(Y,Z) v isAbove(X,Z)
+    isAbove(A,T)
+
+state:
+    ~isAbove(A,T) ^ isAbove(A,T)
+
+contradiction, therefore isAbove(A,T)
+
+**PROOF END**
