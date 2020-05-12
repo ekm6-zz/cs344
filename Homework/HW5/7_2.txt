@@ -1,0 +1,35 @@
+7.2 (Adapted from Barwise and Etchemendy (1993).) Given the following, can you prove
+that the unicorn is mythical? How about magical? Horned?
+
+    If the unicorn is mythical, then it is immortal, but if it is not mythical, then it is a
+    mortal mammal. If the unicorn is either immortal or a mammal, then it is horned.
+    The unicorn is magical if it is horned.
+
+    Mythical:
+        Cannot be proved because there is no statment that has "mythical" as it's outcome.
+    
+    Magical:
+        methods of proving:
+            horned(X) -> magical(X)
+            immortal(X) ^ mammal(X) -> horned(X) -> magical(X)
+            ~mythical(X) -> mammal(X)  -> horned(X) -> magical(X)
+
+        Based on the given satements, if we have the knowldege that either the unicorn is horned, not mythical, immortal, or a mammal then we can prove that it is magical. 
+    
+
+    Horned:
+        immortal(X) ^ mammal(X) -> horned(X)
+        ~mythical(X) -> mammal(X)  -> horned(X) 
+
+        Based on the given satements, if we have the knowldege that either the unicorn is immortal, a mammal, or not mythical then we can prove that it is horned.
+
+
+    prolog:
+        There are only 4 major statments given for us to program:
+        1) isMythical -> isImmortal
+        2) ~isMythical -> isMortal ^ isMammal
+        3) isMortal v isMammal -> isHorned
+        4) isImmortal -> isMagical 
+
+        these are all relatiely simple to program in prolog with the exception of statment 2. We have not formally learned a "not" statement, but after a quick google search, I dsicovered that negation can be a little tricky in prolog. But they have built in a system to program it.
+    
